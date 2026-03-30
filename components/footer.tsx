@@ -23,7 +23,7 @@ export function Footer() {
               PlaceTrix
             </a>
             <p className="max-w-sm text-balance text-muted-foreground text-sm">
-              Train. Track. Triumph.
+              Verified Skills. Real Opportunities.
             </p>
             <div className="flex gap-2">
               {socialLinks.map((item, index) => (
@@ -72,7 +72,7 @@ export function Footer() {
         <div className="absolute inset-x-0 h-px w-full bg-border" />
         <div className="flex max-w-4xl flex-col justify-between gap-2 py-4">
           <p className="text-center font-light text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()},  360 View Tech, All rights reserved
+            &copy; {new Date().getFullYear()}, AcadLedger. All rights reserved
           </p>
         </div>
       </div>
@@ -81,10 +81,7 @@ export function Footer() {
 }
 
 const company = [
-  {
-    title: "Our Team",
-    href: "/our-team",
-  },
+ 
   {
     title: "Privacy Policy",
     href: "/privacy-policy",
@@ -113,16 +110,15 @@ const resources = [
 const socialLinks = [
   {
     icon: <LinkedinIcon />,
-    link: "https://www.linkedin.com/company/360-view-tech/",
+    link: "https://www.linkedin.com/in/vishalraut2106/",
   },
-
   {
     icon: <InstagramIcon />,
-    link: "https://www.instagram.com/360viewtech/",
+    link: "https://www.instagram.com/vishalraut.05/",
   },
   {
     icon: <GithubIcon />,
-    link: "https://github.com/360viewtech",
+    link: "https://github.com/vishalraut2106",
   },
 ];
 

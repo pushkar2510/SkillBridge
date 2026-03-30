@@ -180,8 +180,8 @@ function Contact() {
       </p>
       <p>
         For technical inquiries, reach us at:{" "}
-        <a href="mailto:business@360viewtech.in">
-          business@360viewtech.in
+        <a href="mailto:vishalraut2106@gmail.com">
+          vishalraut2106@gmail.com
         </a>
       </p>
     </>

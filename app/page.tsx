@@ -1,7 +1,7 @@
 import { Header } from "@/components/header";
 import { cn } from "@/lib/utils";
 import { FullWidthDivider } from "@/components/ui/landing/full-width-divider";
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, RocketIcon, GraduationCapIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DecorIcon } from "@/components/ui/landing/decor-icon";
 import { AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -14,87 +14,84 @@ import { HeaderWrapper } from "@/components/header-wrapper";
 import { FeatureSection } from "@/components/feature-section";
 
 
-function HeroSection() {
-  return (
-    <section className="flex flex-col">
-      <div className="relative flex flex-1 flex-col items-center justify-center gap-4 px-4 sm:gap-5 min-h-[calc(100svh-3rem)]">
-        {/* X Faded Borders & Shades */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-1 size-full overflow-hidden"
-        >
-          <div
-            className={cn(
-              "absolute -inset-x-20 inset-y-0 z-0 rounded-full",
-              "bg-[radial-gradient(ellipse_at_center,theme(--color-foreground/.2),transparent,transparent)]",
-              "blur-[50px]"
-            )}
-          />
-          <div className="absolute inset-y-0 left-4 w-px bg-linear-to-b from-transparent via-border to-border md:left-8" />
-          <div className="absolute inset-y-0 right-4 w-px bg-linear-to-b from-transparent via-border to-border md:right-8" />
-          <div className="absolute inset-y-0 left-8 w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:left-12" />
-          <div className="absolute inset-y-0 right-8 w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:right-12" />
-        </div>
+export function HeroSection() {
+	return (
+		<section className="w-full">
+			{/* Top Shades */}
+			<div
+				aria-hidden="true"
+				className="absolute inset-0 isolate hidden overflow-hidden contain-strict lg:block"
+			>
+				<div className="absolute inset-0 -top-14 isolate -z-10 bg-[radial-gradient(35%_80%_at_49%_0%,--theme(--color-foreground/.08),transparent)] contain-strict" />
+			</div>
 
+			{/* X Bold Faded Borders */}
+			<div
+				aria-hidden="true"
+				className="absolute inset-0 mx-auto hidden min-h-screen w-full lg:block"
+			>
+				<div className="mask-y-from-80% mask-y-to-100% absolute inset-y-0 left-0 z-10 h-full w-px bg-foreground/15" />
+				<div className="mask-y-from-80% mask-y-to-100% absolute inset-y-0 right-0 z-10 h-full w-px bg-foreground/15" />
+			</div>
 
-        <a
-          className={cn(
-            "group mx-auto flex max-w-[90vw] w-fit flex-wrap items-center gap-2 rounded-sm border bg-card p-1 shadow sm:gap-3 sm:flex-nowrap",
-            "fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards transition-all delay-500 duration-500 ease-out"
-          )}
-        >
-          <div className="rounded-sm px-1.5 py-0.5 shadow-sm">
-            <p className="font-mono text-xs">NEW</p>
-          </div>
-          <span className="text-xs">1,000+ mock tests attempted</span>
-          <span className="hidden h-5 border-l sm:block" />
-          <div className="pr-1 hidden sm:block">
-            <ArrowRightIcon className="size-3 -translate-x-0.5 duration-150 ease-out group-hover:translate-x-0.5" />
-          </div>
-        </a>
+			{/* main content */}
 
+			<div className="relative flex flex-col items-center justify-center gap-5 pt-32 pb-30">
+				{/* X Content Faded Borders */}
+				<div
+					aria-hidden="true"
+					className="absolute inset-0 -z-1 size-full overflow-hidden"
+				>
+					<div className="absolute inset-y-0 left-4 w-px bg-linear-to-b from-transparent via-border to-border md:left-8" />
+					<div className="absolute inset-y-0 right-4 w-px bg-linear-to-b from-transparent via-border to-border md:right-8" />
+					<div className="absolute inset-y-0 left-8 w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:left-12" />
+					<div className="absolute inset-y-0 right-8 w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:right-12" />
+				</div>
 
-        <h1
-          className={cn(
-            "max-w-xs text-balance text-center text-4xl text-foreground sm:max-w-xl sm:text-5xl md:max-w-2xl md:text-6xl lg:text-7xl",
-            "fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards delay-100 duration-500 ease-out"
-          )}
-        >
-          The Gap Between You and Your Goal? Let's Close It.
-        </h1>
+				<a
+					className={cn(
+						"group mx-auto flex w-fit items-center gap-3 rounded-full border bg-card px-3 py-1 shadow",
+						"fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards transition-all delay-500 duration-500 ease-out"
+					)}
+					href="#link"
+				>
+					<RocketIcon className="size-3 text-muted-foreground" />
+					<span className="text-xs">1,000+ mock tests attempted</span>
+					<span className="block h-5 border-l" />
 
+					<ArrowRightIcon className="size-3 duration-150 ease-out group-hover:translate-x-1" />
+				</a>
 
-        <p
-          className={cn(
-            "max-w-xs text-center text-muted-foreground text-sm tracking-normal sm:max-w-none sm:tracking-wider sm:text-lg",
-            "fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards delay-200 duration-500 ease-out"
-          )}
-        >
-          Practice with mock tests, track your progress, <br className="hidden sm:block" /> and
-          crush your goals with Placetrix.
-        </p>
+				<h1
+					className={cn(
+						"fade-in slide-in-from-bottom-10 animate-in text-balance fill-mode-backwards text-center text-4xl tracking-tight delay-100 duration-500 ease-out md:text-5xl lg:text-6xl",
+						"text-shadow-[0_0px_50px_theme(--color-foreground/.2)]"
+					)}
+				>
+					The Gap Between You <br /> and Your Goal? Let's Close It.
+				</h1>
 
+				<p className="fade-in slide-in-from-bottom-10 mx-auto max-w-md animate-in fill-mode-backwards text-center text-base text-foreground/80 tracking-wider delay-200 duration-500 ease-out sm:text-lg md:text-xl">
+					Practice with mock tests, track your progress, <br /> and crush your goals with Placetrix.
+				</p>
 
-        <div className="fade-in slide-in-from-bottom-10 flex w-fit animate-in items-center justify-center gap-3 fill-mode-backwards pt-1 sm:pt-2 delay-300 duration-500 ease-out">
-          <Link href="/auth/sign-up">
-            <Button size="sm" className="sm:size-default">
-              Start Practicing
-              <ArrowRightIcon data-icon="inline-end" />
-            </Button>
-          </Link>
-        </div>
-      </div>
-
-
-      <div className="relative">
-        <DecorIcon className="size-4" position="top-left" />
-        <DecorIcon className="size-4" position="top-right" />
-        <DecorIcon className="size-4" position="bottom-left" />
-        <DecorIcon className="size-4" position="bottom-right" />
-        <FullWidthDivider className="-bottom-px" />
-      </div>
-    </section>
-  );
+				<div className="fade-in slide-in-from-bottom-10 flex animate-in flex-row flex-wrap items-center justify-center gap-3 fill-mode-backwards pt-2 delay-300 duration-500 ease-out">
+					<Link href="/auth/sign-up">
+						<Button className="rounded-full" size="lg">
+							Start Practicing
+							<ArrowRightIcon data-icon="inline-end" />
+						</Button>
+					</Link>
+					<Link href="/auth/sign-in">
+						<Button className="rounded-full" size="lg" variant="secondary">
+							<GraduationCapIcon data-icon="inline-start" />
+							I'm an Institute
+						</Button>
+					</Link>
+				</div>
+			</div>
+		</section>
+	);
 }
 
 
@@ -140,35 +137,54 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Placetrix’s structured aptitude and technical tests were vital to my prep. Consistent practice boosted my confidence and helped me clear the Infosys aptitude round. I highly recommend it!",
-    image: "https://api.dicebear.com/9.x/glass/svg?seed=Pranjal Haral",
-    name: "Pranjal Haral",
+      "The sectional tests helped me specifically improve logical reasoning, which was heavily asked in my internship screening round.",
+    image: "https://api.dicebear.com/9.x/glass/svg?seed=Kunal Shah",
+    name: "Kunal Shah",
+    role: "Data Analyst Intern",
+    company: "Wipro",
+  },
+  {
+    quote:
+      "The timed mock tests on Placetrix exposed my weak spots fast. Within weeks, my aptitude accuracy jumped from 60% to 85%. That made a real difference in my placement rounds.",
+    image: "https://api.dicebear.com/9.x/glass/svg?seed=Aditya Patil",
+    name: "Aditya Patil",
     role: "Software Engineer",
     company: "Infosys",
   },
   {
     quote:
-      "Regular practice with Placetrix improved my fundamentals and helped me crack the Infosys aptitude round. I appreciate the effort and recommend it to all aspirants.",
-    image: "https://api.dicebear.com/9.x/glass/svg?seed=Janhavi Patil",
-    name: "Janhavi Patil",
-    role: "Software Engineer",
-    company: "Infosys",
+      "Placetrix analytics showed me exactly where I was failing. I stopped wasting time on random prep and focused only on high-impact topics. Cleared my first attempt.",
+    image: "https://api.dicebear.com/9.x/glass/svg?seed=Neha Verma",
+    name: "Neha Verma",
+    role: "Analyst",
+    company: "Deloitte",
   },
   {
     quote:
-      "Placetrix was essential to my success. The app’s quizzes and mock tests significantly improved my speed and accuracy, leaving me well-prepared for the placement process. Truly thankful!",
-    image: "https://api.dicebear.com/9.x/glass/svg?seed=Pinal Lagdhir",
-    name: "Pinal Lagdhir",
-    role: "Software Engineer",
-    company: "Infosys",
+      "Consistency was my biggest problem. The daily practice streaks on Placetrix forced discipline, and that’s what ultimately got me placed.",
+    image: "https://api.dicebear.com/9.x/glass/svg?seed=Rohit Sharma",
+    name: "Rohit Sharma",
+    role: "Associate Engineer",
+    company: "Capgemini",
   },
+
+  // Internships
   {
     quote:
-      "Placetrix helped me approach placements in a structured way. The consistent practice strengthened my problem-solving skills and boosted my confidence. A must-use for aspirants!",
-    image: "https://api.dicebear.com/9.x/glass/svg?seed=Chaitali Bonde",
-    name: "Chaitali Bonde",
-    role: "Software Engineer",
-    company: "Infosys",
+      "Before Placetrix, I struggled with basic aptitude. The structured practice helped me crack my first internship test confidently.",
+    image: "https://api.dicebear.com/9.x/glass/svg?seed=Pooja Nair",
+    name: "Pooja Nair",
+    role: "Software Intern",
+    company: "TCS",
+  },
+ 
+  {
+    quote:
+      "I used Placetrix for just 3 weeks before my internship drive. The speed improvement alone helped me clear the cutoff easily.",
+    image: "https://api.dicebear.com/9.x/glass/svg?seed=Anjali Gupta",
+    name: "Anjali Gupta",
+    role: "Backend Developer Intern",
+    company: "Cognizant",
   },
 ];
 
@@ -227,7 +243,7 @@ export default function LandingPage() {
       <HeaderWrapper />
       <main
         className={cn(
-          "relative mx-auto w-full max-w-4xl grow",
+          "relative mx-auto w-full grow",
           // X Borders — hidden on very small screens to avoid clipping content
           "sm:before:absolute sm:before:-inset-y-14 sm:before:-left-px sm:before:w-px sm:before:bg-border",
           "sm:after:absolute sm:after:-inset-y-14 sm:after:-right-px sm:after:w-px sm:after:bg-border"

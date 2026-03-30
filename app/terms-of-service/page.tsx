@@ -238,8 +238,8 @@ function ContactSection() {
         Administrator. For matters requiring direct communication with PlaceTrix:
       </p>
       <p>
-        <a href="mailto:business@360viewtech.in">
-          business@360viewtech.in
+        <a href="mailto:vishalraut2106@gmail.com">
+          vishalraut2106@gmail.com
         </a>
       </p>
     </>

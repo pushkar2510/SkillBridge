@@ -14,10 +14,10 @@ export function FeatureSection() {
 		<div className="mx-auto pt-14 w-full max-w-5xl space-y-8">
 			<div className="mx-auto max-w-3xl text-center">
 				<h2 className="text-balance font-medium text-2xl md:text-4xl lg:text-5xl">
-					Train. Track. Triumph.
+					Verified Skills. Real Opportunities.
 				</h2>
 				<p className="mt-4 text-balance text-muted-foreground text-sm md:text-base">
-					Everything you need to practice, prepare, and get placed.
+					Build job-ready skills, prove your potential, and land the career you deserve.
 				</p>
 			</div>
 
