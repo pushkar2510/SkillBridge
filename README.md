@@ -8,7 +8,7 @@
 
 <br /><br />
 
-# 🎓 AcadLedger
+# 🎓 SkillBridge
 
 ### *The Bridge Between Academia and Industry — Rebuilt from the Ground Up*
 
