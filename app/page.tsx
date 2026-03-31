@@ -12,6 +12,7 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { HeaderWrapper } from "@/components/header-wrapper";
 import { FeatureSection } from "@/components/feature-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
 
 
 export function HeroSection() {
@@ -111,6 +112,7 @@ export default function LandingPage() {
       >
         <HeroSection />
         <FeatureSection />
+        <TestimonialsSection />
         <Footer />
       </main>
     </div>
