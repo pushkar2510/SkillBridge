@@ -55,6 +55,7 @@ const NAV_MAIN: Record<AccountType, NavItem[]> = {
     { title: "Resume Builder", url: "/~/resume", icon: IconFileDescription },
     { title: "Resume Analyzer", url: "/~/resume-analyzer", icon: IconFileAnalytics },
     { title: "Events", url: "/~/events", icon: IconCalendarEvent },
+    { title: "Portfolio", url: "/~/portfolio", icon: IconCalendarEvent },
   ],
   admin: [
     { title: "Home", url: "/~/home", icon: IconHome },
@@ -352,7 +353,7 @@ const Logo = React.memo(() => (
   <div className="shrink-0 size-5 flex items-center justify-center">
     <Image
       src={PlaceTrixLogo}
-      alt="PlaceTrix"
+      alt="SkillBridge"
       width={20}
       height={20}
       className="size-full dark:invert"
@@ -387,7 +388,7 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
                 <Logo />
                 <div className="flex flex-1 items-center gap-1.5 overflow-hidden">
                   <span className="text-base font-bold transition-all duration-300 group-hover/logo:tracking-wider truncate">
-                    PlaceTrix
+                    SkillBridge
                   </span>
                   <span className="shrink-0 rounded-full bg-muted px-1.5 py-0.5 text-[10px] font-medium leading-none text-muted-foreground tabular-nums">
                     v{version}

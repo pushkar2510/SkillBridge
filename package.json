@@ -1,7 +1,7 @@
 {
-  "name": "placetrix",
-  "version": "1.1.7",
-  "description": "Placetrix - Educational Assessment Platform",
+  "name": "skillbridge",
+  "version": "1.0.0",
+  "description": "SkillBridge - Career Discovery Platform",
   "private": true,
   "scripts": {
     "dev": "next dev",
