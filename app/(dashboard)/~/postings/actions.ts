@@ -38,3 +38,30 @@ export async function updateApplicationStatusAction(applicationId: string, statu
   }
 }
 
+/**
+ * Bulk move ALL applicants in a given opportunity from one or more source statuses
+ * to a target status. Used for "Move all to Applied" flow.
+ */
+export async function bulkUpdateApplicationStatusAction(
+  opportunityId: string,
+  fromStatuses: ApplicationStatus[],
+  toStatus: ApplicationStatus
+) {
+  const VALID = ["pending", "applied", "reviewing", "shortlisted", "rejected", "hired"] as const
+  if (!(VALID as readonly string[]).includes(toStatus)) {
+    throw new Error(`Invalid target status: "${toStatus}"`)
+  }
+
+  const supabase = await createClient()
+  const { error, count } = await supabase
+    .from("applications")
+    .update({ status: toStatus, updated_at: new Date().toISOString() })
+    .eq("opportunity_id", opportunityId)
+    .in("status", fromStatuses)
+
+  if (error) throw new Error(error.message)
+
+  revalidatePath(`/~/postings/${opportunityId}`)
+  return { updated: count ?? 0 }
+}
+
